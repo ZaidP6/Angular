@@ -1,1 +1,13 @@
-<p>preguntas works!</p>
+<div *ngIf="!mostrarResultado">
+    <h2>{{ preguntas[preguntaActualIndex]?.pregunta }}</h2>
+    <div *ngFor="let opcion of preguntas[preguntaActualIndex]?.opciones">
+      <button (click)="responder(opcion)">{{ opcion }}</button>
+    </div>
+  </div>
+  
+  <div *ngIf="mostrarResultado">
+    <h2>¡Fin del juego!</h2>
+    <p>Tu puntaje es: {{ puntaje }} de {{ preguntas.length }}</p>
+    <button (click)="reiniciarJuego()">Jugar de nuevo</button>
+  </div>
+  
