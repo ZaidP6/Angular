@@ -8,15 +8,56 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'calculadora';
-  operandoA: number = 0;
-  operandoB: number = 0;
-  resultado: number = 0;
+  operando: string = "0";
+  numAnterior: string = "";
+  operador: string = "";
+  operacion:string = ""
+  resultado: string = "";
+  opTerminada:boolean = false;
 
-  onSuma(): void {
-    this.resultado = this.operandoA + this.operandoB;
+  onClear(){
+    this.numAnterior ="";
+    this.opTerminada = false;
+    this.operacion = "";
+    this.operando = "0";
+    this.resultado = ""
   }
 
-  onResta(): void{
-    this.resultado = this.operandoA - this.operandoB;
+  onNumberClick(number:string){
+    if(this.opTerminada){
+      this.operando = number;
+      this.opTerminada = false;
+    } else {
+      this.operando === "0" ? this.operando = number : this.operando += number;
+    }
   }
+
+  onOperadorClick(operador: string){
+    this.operador = operador;
+    this.numAnterior = this.operando;
+    this.operando = "";
+  }
+
+  calculate(){
+    let resultado:number = 0;
+    let anterior = parseFloat(this.numAnterior);
+    let actual = parseFloat(this.operando);
+
+    switch(this.operador){
+      case '+':
+        resultado = anterior + actual;
+        break;
+      case '-':
+        resultado = anterior - actual;
+        break;
+    }
+
+    this.operacion = `${this.numAnterior} ${this.operador} ${this.operando} `;
+    this.operando = resultado.toString();
+    this.numAnterior = "";
+    this.operador = "";
+    this.opTerminada = true;
+  }
+
+
 }
