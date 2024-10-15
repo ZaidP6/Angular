@@ -3,17 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DigitoComponent } from './components/digito/digito.component';
-import { SignoComponent } from './components/signo/signo.component';
-import { ResultadoComponent } from './components/resultado/resultado.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DigitoComponent,
-    SignoComponent,
-    ResultadoComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
