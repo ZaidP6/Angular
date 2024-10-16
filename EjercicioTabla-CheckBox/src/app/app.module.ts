@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule} from '@angular/router';
-
-import { AppComponent } from './app.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppComponent } from './app.component';
+import { StudentTableComponent } from './components/student-table/student-table.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    StudentTableComponent,
+  ],
   imports: [
     BrowserModule,
     MatTableModule,
     MatCheckboxModule,
-    BrowserAnimationsModule,
-    RouterModule
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
