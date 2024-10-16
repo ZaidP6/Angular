@@ -11,7 +11,7 @@
 ## Ejercicios entregados
 + ### [Card-coche](https://github.com/ZaidP6/Angular/tree/main/Card-Coche)
 + ### [calculadora](https://github.com/ZaidP6/Angular/tree/main/calculadora)
-+ ### [EjercicioTabla-CheckBox]([https://github.com/ZaidP6/Angular.git](https://github.com/ZaidP6/Angular/tree/main/EjercicioTabla-CheckBox))
++ ### [EjercicioTabla-CheckBox](https://github.com/ZaidP6/Angular/tree/main/EjercicioTabla-CheckBox)
 
 
 ## Ejercicios Openwebinar
