@@ -7,6 +7,7 @@
 + ### [hello-world](https://github.com/ZaidP6/Angular/tree/main/hello-world)
 + ### [two-way-data-binding](https://github.com/ZaidP6/Angular/tree/main/two-way-data-binding)
 + ### [angular-bootstrap](https://github.com/ZaidP6/Angular/tree/main/angular-bootstrap)
++ ### [Barra-Progreso](https://github.com/ZaidP6/Angular/tree/main/Barra-Progreso)
 
 ## Ejercicios entregados
 + ### [Card-coche](https://github.com/ZaidP6/Angular/tree/main/Card-Coche)
