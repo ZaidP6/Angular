@@ -8,7 +8,7 @@ import { VehicleService } from '../../services/vehicle.service';
   styleUrl: './vehicle-list.component.css'
 })
 export class VehicleListComponent implements OnInit {
-  listadoVehiculos: Vehicle[] = [];  // Es un array de Vehicle
+  listadoVehiculos: Vehicle[] = [];
 
   constructor(private vehicleService: VehicleService) { }
 
