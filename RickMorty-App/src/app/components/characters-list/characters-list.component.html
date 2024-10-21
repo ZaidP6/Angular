@@ -1,12 +1,12 @@
 <div class="container-fluid">
     <div class="row mt-2 mb-2">
-        @for (item of listadoVehiculos; track $index) {
+        @for (item of listaPersonajes; track item.id) {
         <div class="col-3 p-4">
             <div class="card">
-                <a href ="" >
+                <a [routerLink] = "['/character',item.id]" class="text-decoration-none text-reset" >
                     <img
                         class="card-img-top img-fluid"
-                        [src]="'https://starwars-visualguide.com/assets/img/vehicles/' + getVehicleId(item.url) + '.jpg'"
+                        [src]="item.image"
                         alt="Card image cap" />
                     <div class="card-body card text-center">
                         <h5 class="card-title fc-light ">{{ item.name }}</h5>
