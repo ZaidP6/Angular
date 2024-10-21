@@ -15,6 +15,7 @@
 + ### [EjercicioTabla-CheckBox](https://github.com/ZaidP6/Angular/tree/main/EjercicioTabla-CheckBox)
 + ### [StarWars-Vehicles-App](https://github.com/ZaidP6/Angular/tree/main/starwars-vehicles-app)
 + ### [LogIn-App](https://github.com/ZaidP6/Angular/tree/main/LogIn-App)
++ ### [RickMorty-App](https://github.com/ZaidP6/Angular/tree/main/RickMorty-App)
 
 
 ## Ejercicios Openwebinar
