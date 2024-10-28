@@ -1,0 +1,17 @@
+
+
+<div>
+  <h3 class="bg-danger">Elige tu Pokémon</h3>
+  <select [(ngModel)]="pokemonSeleccionado" (change)="seleccionarPokemon(pokemonSeleccionado)">
+    @for (pokemon of listaPokemon; track pokemon.name) {
+    <option>{{ pokemon.name }}</option>
+  }
+  </select>
+</div>
+<!--
+<div>
+  <select [(ngModel)]="pokemonSeleccionado" (change)="guardarPokemonSeleccionado()">
+    <option *ngFor="let pokemon of listaPokemon" [ngValue]="pokemon">{{pokemon.name}}</option>
+  </select>
+</div>
+-->

@@ -1,32 +1,9 @@
-<div>
-  <select [(ngModel)]="pokemonSeleccionado" (change)="guardarPokemonSeleccionado()">
-    <option *ngFor="let pokemon of listaPokemon" [ngValue]="pokemon">{{pokemon.name}}</option>
-  </select>
-</div>
 
 
 <div class="star-container">
-  @for (pokemon of listaPokemon; track pokemon.name) {
-    <div class="star m-4">
-      <a [routerLink]="['/pokemon', pokemon.id]">
-        <img [src]="pokemon.imageUrl" [alt]="pokemon.name" width="150%">
-      </a>
-    </div>
-  }
+  <div *ngFor="let pokemon of listaPokemon" class="star m-4">
+    <a [routerLink]="['/pokemon', pokemon.id]">
+      <img [src]="pokemon.imageUrl" [alt]="pokemon.name" width="150%">
+    </a>
+  </div>
 </div>
-
-<div>
-  <h3>Elige tu Pokémon</h3>
-  <select [(ngModel)]="pokemonSeleccionado" (change)="seleccionarPokemon(pokemonSeleccionado)">
-    <option *ngFor="let pokemon of listaPokemon" [ngValue]="pokemon">{{ pokemon.name }}</option>
-  </select>
-</div>
-
-
-<!--
-<app-pagination
-  [totalPaginas]="totalPaginas"
-  [paginaActual]="paginaActual">
-</app-pagination>
-
--->

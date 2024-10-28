@@ -23,9 +23,16 @@ export class PokemonListComponent implements OnInit {
     });
   }
 
-  seleccionarPokemon(pokemon: Pokemon): void {
-    this.pokemonSeleccionado = pokemon;
-    const pokemonId = this.pokemonService.getPokemonId(pokemon.url);
-    this.pokemonService.setSelectedPokemon(Number(pokemonId));
+  seleccionarPokemon(pokemon: Pokemon | null): void {
+    if (pokemon) { // Verificar que no sea null
+      this.pokemonSeleccionado = pokemon;
+      const pokemonId = this.pokemonService.getPokemonId(pokemon.url);
+      this.pokemonService.setSelectedPokemon(Number(pokemonId));
+    }
+  }
+
+
+  guardarPokemonSeleccionado(): void {
+    console.log(this.pokemonSeleccionado); // Guardar el Pokémon seleccionado
   }
 }

@@ -1,8 +1,17 @@
 <div class="star-container">
-    @for (pokemon of listaPokemon; track pokemon.name) {
-      <div class="star">
-        <img [src]="getPokemonImage(pokemon.url)" [alt]="pokemon.name">
-      </div>
-    }
-  </div>
-  
+  @for (pokemon of listaPokemon; track pokemon.name) {
+    <div class="star m-4">
+      <a [routerLink]="['/pokemon', pokemon.id]">
+        <img [src]="pokemon.imageUrl" [alt]="pokemon.name" width="150%">
+      </a>
+    </div>
+  }
+</div>
+
+<!--
+<app-pagination 
+  [totalPaginas]="totalPaginas" 
+  [paginaActual]="paginaActual">
+</app-pagination>
+
+-->

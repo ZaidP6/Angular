@@ -14,6 +14,8 @@ import { GameListComponent } from './components/game-list/game-list.component';
 import { GameDetailComponent } from './components/game-detail/game-detail.component';
 import { PokemonBattleComponent } from './components//pokemon-battle/pokemon-battle.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { ElectionComponent } from './components/election/election.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +28,13 @@ import { FormsModule } from '@angular/forms';
     PaginationComponent,
     GameListComponent,
     GameDetailComponent,
-    PokemonBattleComponent
+    PokemonBattleComponent,
+    ElectionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    NgModule,
     FormsModule
   ],
   providers: [
