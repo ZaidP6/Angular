@@ -1,31 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../../services/pokemon.service';
-import { PokemonDetailResponse } from '../../models/pokemon-detail';
+import { PokemonDetailResponse } from '../../models/pokemon';
 
 @Component({
   selector: 'app-pokemon-battle',
   templateUrl: './pokemon-battle.component.html',
+  styleUrls: ['./pokemon-battle.component.css']
 })
 export class PokemonBattleComponent implements OnInit {
-  pokemon1Detalles: PokemonDetailResponse | null = null;
-  pokemon2Detalles: PokemonDetailResponse | null = null;
-  pokemon1Vida: number = 100;
-  pokemon2Vida: number = 100;
-  turn: number = 1;
-
+  pokemon1: PokemonDetailResponse | null = null;
+  pokemon2: PokemonDetailResponse | null = null;
+  pokemon1Health = 100;
+  pokemon2Health = 100;
+  isPokemon1Turn = true;
 
   constructor(private pokemonService: PokemonService) {}
 
-  ngOnInit() {
-    // Aquí puedes obtener los detalles de los Pokémon (puedes recibirlos como @Input)
+  ngOnInit(): void {
+    this.pokemonService.getSelectedPokemon().subscribe(id => {
+      if (id !== null) {
+        this.pokemonService.getOnePokemon(id).subscribe(pokemon => this.pokemon1 = pokemon);
+      }
+      // Suponiendo que pokemon2 es aleatorio o predeterminado.
+      this.pokemonService.getOnePokemon(4).subscribe(pokemon => this.pokemon2 = pokemon); // Ejemplo: Pokémon 4 (Charmander)
+    });
   }
 
-  atacar() {
-    if (this.turn % 2 === 0) {
-      this.pokemon2Vida = Math.max(0, this.pokemon2Vida - 40); // Resta vida sin que baje de 0
-    } else {
-      this.pokemon1Vida = Math.max(0, this.pokemon1Vida - 40);
+  atacar(): void {
+    if (this.isPokemon1Turn && this.pokemon2Health > 0) {
+      this.pokemon2Health -= 40; // Daño fijo de 40
+      this.isPokemon1Turn = false;
+    } else if (this.pokemon1Health > 0) {
+      this.pokemon1Health -= 40;
+      this.isPokemon1Turn = true;
     }
-    this.turn++;
   }
 }

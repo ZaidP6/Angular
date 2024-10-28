@@ -12,7 +12,8 @@ import { ItemDetailComponent } from './components/item-detail/item-detail.compon
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { GameListComponent } from './components/game-list/game-list.component';
 import { GameDetailComponent } from './components/game-detail/game-detail.component';
-import { PokemonBattleComponent } from './components/pokemon-battle/pokemon-battle.component';
+import { PokemonBattleComponent } from './components//pokemon-battle/pokemon-battle.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { PokemonBattleComponent } from './components/pokemon-battle/pokemon-batt
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    NgModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration(),

@@ -15,6 +15,12 @@
   }
 </div>
 
+<div>
+  <h3>Elige tu Pokémon</h3>
+  <select [(ngModel)]="pokemonSeleccionado" (change)="seleccionarPokemon(pokemonSeleccionado)">
+    <option *ngFor="let pokemon of listaPokemon" [ngValue]="pokemon">{{ pokemon.name }}</option>
+  </select>
+</div>
 
 
 <!--

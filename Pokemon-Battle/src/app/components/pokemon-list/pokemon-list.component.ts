@@ -11,17 +11,21 @@ export class PokemonListComponent implements OnInit {
   listaPokemon: (Pokemon & { id: number, imageUrl: string })[] = [];
   pokemonSeleccionado: Pokemon | null = null;
 
-  constructor(private pokemonService: PokemonService) { }
+  constructor(private pokemonService: PokemonService) {}
 
   ngOnInit(): void {
     this.pokemonService.getPokemonList().subscribe(response => {
-      this.listaPokemon = response.results.map((pokemon, index) => {
-        const id = this.pokemonService.getPokemonId(pokemon.url); // Obtiene el ID
-        const imageUrl = this.pokemonService.getPokemonImage(Number(id)); // Genera la URL de imagen
+      this.listaPokemon = response.results.map(pokemon => {
+        const id = this.pokemonService.getPokemonId(pokemon.url);
+        const imageUrl = this.pokemonService.getPokemonImage(Number(id));
         return { ...pokemon, id: Number(id), imageUrl };
       });
     });
   }
 
-
+  seleccionarPokemon(pokemon: Pokemon): void {
+    this.pokemonSeleccionado = pokemon;
+    const pokemonId = this.pokemonService.getPokemonId(pokemon.url);
+    this.pokemonService.setSelectedPokemon(Number(pokemonId));
+  }
 }

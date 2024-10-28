@@ -6,14 +6,18 @@ import { ItemListComponent } from './components/item-list/item-list.component';
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 import { GameListComponent } from './components/game-list/game-list.component';
 import { GameDetailComponent } from './components/game-detail/game-detail.component';
+import { PokemonBattleComponent } from './components/pokemon-battle/pokemon-battle.component';
 
 const routes: Routes = [
-  {path: '', component:PokemonListComponent},
-  {path: 'item', component:ItemListComponent},
-  {path: 'games', component:GameListComponent},
-  {path: 'item/:id', component:ItemDetailComponent},
-  {path: 'pokemon/:id',component:PokemonDetailComponent },
-  {path: 'version/:id',component:GameDetailComponent },
+  { path: 'pokemon-list', component: PokemonListComponent },
+  { path: 'pokemon-battle', component: PokemonBattleComponent },
+  { path: '', redirectTo: '/pokemon-list', pathMatch: 'full' }
+  { path: '', component: PokemonListComponent },
+  { path: 'item', component: ItemListComponent },
+  { path: 'games', component: GameListComponent },
+  { path: 'item/:id', component: ItemDetailComponent },
+  { path: 'pokemon/:id', component: PokemonDetailComponent },
+  { path: 'version/:id', component: GameDetailComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
