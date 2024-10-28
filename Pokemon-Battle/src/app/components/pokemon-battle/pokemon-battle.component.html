@@ -1,1 +1,12 @@
-<p>pokemon-battle works!</p>
+<div>
+  <h2>{{pokemon1Detalles?.name}} vs {{pokemon2Detalles?.name}}</h2>
+  <div>
+    <img [src]="pokemon1Detalles?.sprites.front_default" alt="{{pokemon1Detalles?.name}}">
+    <p>Vida: {{pokemon1Vida}}</p>
+  </div>
+  <div>
+    <img [src]="pokemon2Detalles?.sprites.front_default" alt="{{pokemon2Detalles?.name}}">
+    <p>Vida: {{pokemon2Vida}}</p>
+  </div>
+  <button (click)="atacar()">Atacar</button>
+</div>
