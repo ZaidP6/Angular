@@ -1,1 +1,15 @@
-<p>pokemon-battle works!</p>
+<div *ngIf="pokemon1 && pokemon2">
+  <div class="pokemon">
+    <h3>{{ pokemon1.name }}</h3>
+    <img [src]="pokemon1.sprites.front_default" alt="{{ pokemon1.name }}">
+    <p>Vida: {{ pokemon1Health }}</p>
+  </div>
+  <div class="pokemon">
+    <h3>{{ pokemon2.name }}</h3>
+    <img [src]="pokemon2.sprites.front_default" alt="{{ pokemon2.name }}">
+    <p>Vida: {{ pokemon2Health }}</p>
+  </div>
+  <button (click)="atacar()" [disabled]="isPokemon1Turn ? pokemon2Health <= 0 : pokemon1Health <= 0">
+    {{ isPokemon1Turn ? 'Atacar' : 'Esperar turno' }}
+  </button>
+</div>

@@ -1,25 +1,45 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
-
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PokemonBattleComponent } from './components/pokemon-battle/pokemon-battle.component';
-import { PokemonComponent } from './components/pokemon/pokemon.component';
+import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
+import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
+import { provideHttpClient } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MenuComponent } from './components/menu/menu.component';
+import { ItemListComponent } from './components/item-list/item-list.component';
+import { ItemDetailComponent } from './components/item-detail/item-detail.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
+import { GameListComponent } from './components/game-list/game-list.component';
+import { GameDetailComponent } from './components/game-detail/game-detail.component';
+import { PokemonBattleComponent } from './components//pokemon-battle/pokemon-battle.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { ElectionComponent } from './components/election/election.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    PokemonListComponent,
+    PokemonDetailComponent,
+    MenuComponent,
+    ItemListComponent,
+    ItemDetailComponent,
+    PaginationComponent,
+    GameListComponent,
+    GameDetailComponent,
     PokemonBattleComponent,
-    PokemonComponent,
-    MenuComponent
+    ElectionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    FormsModule
   ],
   providers: [
-    provideClientHydration(withEventReplay())
+    provideClientHydration(),
+    provideHttpClient()
   ],
   bootstrap: [AppComponent]
 })
