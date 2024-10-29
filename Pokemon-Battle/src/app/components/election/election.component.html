@@ -1,6 +1,6 @@
 
 
-<div>
+<!--<div>
   <h3 class="bg-danger">Elige tu Pokémon</h3>
   <select [(ngModel)]="pokemonSeleccionado" (change)="seleccionarPokemon(pokemonSeleccionado)">
     @for (pokemon of listaPokemon; track pokemon.name) {
@@ -8,10 +8,10 @@
   }
   </select>
 </div>
-<!--
-<div>
-  <select [(ngModel)]="pokemonSeleccionado" (change)="guardarPokemonSeleccionado()">
-    <option *ngFor="let pokemon of listaPokemon" [ngValue]="pokemon">{{pokemon.name}}</option>
-  </select>
-</div>
 -->
+<h2>Selecciona tu Pokémon</h2>
+<select [(ngModel)]="selectedPokemonId">
+  <option *ngFor="let pokemon of listaPokemon" [value]="pokemon.name">{{ pokemon.name }}</option>
+</select>
+<button (click)="selectPokemon()">¡Luchar!</button>
+

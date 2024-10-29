@@ -1,15 +1,20 @@
-<div *ngIf="pokemon1 && pokemon2">
-  <div class="pokemon">
-    <h3>{{ pokemon1.name }}</h3>
-    <img [src]="pokemon1.sprites.front_default" alt="{{ pokemon1.name }}">
-    <p>Vida: {{ pokemon1Health }}</p>
+<h2>¡Batalla Pokémon!</h2>
+
+<div *ngIf="myPokemon && opponentPokemon">
+  <div class="pokemon-container">
+    <h3>{{ myPokemon.name }} (Tú)</h3>
+    <img [src]="myPokemon.sprites.front_default" alt="{{ myPokemon.name }}">
+    <p>Vida: {{ myPokemonHp }}</p>
   </div>
-  <div class="pokemon">
-    <h3>{{ pokemon2.name }}</h3>
-    <img [src]="pokemon2.sprites.front_default" alt="{{ pokemon2.name }}">
-    <p>Vida: {{ pokemon2Health }}</p>
+
+  <div class="pokemon-container">
+    <h3>{{ opponentPokemon.name }} (Oponente)</h3>
+    <img [src]="opponentPokemon.sprites.front_default" alt="{{ opponentPokemon.name }}">
+    <p>Vida: {{ opponentPokemonHp }}</p>
   </div>
-  <button (click)="atacar()" [disabled]="isPokemon1Turn ? pokemon2Health <= 0 : pokemon1Health <= 0">
-    {{ isPokemon1Turn ? 'Atacar' : 'Esperar turno' }}
-  </button>
+
+  <button (click)="atacar()" [disabled]="!turno">Atacar</button>
+  <!--  @if (myPokemonHp <= 0 ? "Perdiste la batalla " : opponentPokemonHp <= 0 ? "Ganaste la Batalla : "Ha habido un error") {-->
+  <p *ngIf="myPokemonHp <= 0">Perdiste la batalla...</p>
+  <p *ngIf="opponentPokemonHp <= 0">¡Ganaste la batalla!</p>
 </div>

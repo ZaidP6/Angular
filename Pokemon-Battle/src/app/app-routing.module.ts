@@ -11,14 +11,15 @@ import { ElectionComponent } from './components/election/election.component';
 
 const routes: Routes = [
   { path: 'pokemon-list', component: PokemonListComponent },
-  { path: 'pokemon-election', component: ElectionComponent },
+  { path: 'pokemon-selection', component: ElectionComponent },
   { path: 'pokemon-battle', component: PokemonBattleComponent },
-  { path: '', redirectTo: '/pokemon-list', pathMatch: 'full' },
   { path: 'item', component: ItemListComponent },
   { path: 'games', component: GameListComponent },
   { path: 'item/:id', component: ItemDetailComponent },
   { path: 'pokemon/:id', component: PokemonDetailComponent },
   { path: 'version/:id', component: GameDetailComponent },
+  { path: '', redirectTo: 'pokemon-selection', pathMatch: 'full' },
+  { path: '', redirectTo: '/pokemon-list', pathMatch: 'full' },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
