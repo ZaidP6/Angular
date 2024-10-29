@@ -1,10 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'Openwebinar-Prueba02';
+export class AppComponent implements OnInit {
+  title = 'myapp';
+
+  styles = {
+    display: 'flex',
+    'flex-direction': 'column',
+    'align-items': 'center',
+    padding: '20px',
+    width: '200px',
+  }
+
+  // products: any;
+
+  ngOnInit(): void {
+    // this.products = products
+  }
 }

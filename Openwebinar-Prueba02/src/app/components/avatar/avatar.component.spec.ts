@@ -8,10 +8,10 @@ describe('AvatarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AvatarComponent]
+      declarations: [ AvatarComponent ]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(AvatarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
