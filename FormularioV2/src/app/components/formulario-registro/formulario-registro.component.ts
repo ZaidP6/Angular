@@ -25,49 +25,20 @@ export class FormularioRegistroComponent {
   letraDni: string = '';
 
   calculateDniLetter() {
-    const letras = 'TRWAGMYFPDXBNJZSQVHLCKE';
-    if (this.usuario.dni) {
-      const nifNumber = parseInt(this.usuario.dni, 10);
-      this.letraDni = letras.charAt(nifNumber % 23);
+    const dni = this.usuario.dni;
+    if (dni.length === 8 && !isNaN(Number(dni))) {
+      const letras = 'TRWAGMYFPDXBNJZSQVHLCKE';
+      this.letraDni = letras[parseInt(dni) % 23];
     } else {
       this.letraDni = '';
     }
   }
 
   onRegister() {
-    if (this.isValidForm()) {
+    if (this.usuario.password == this.usuario.confirmPassword) {
       console.log(this.usuario);
     } else {
       alert('Revisa los campos: hay errores en el formulario');
     }
-  }
-
-  isValidForm(): boolean {
-    const {
-      nombre,
-      apellidos,
-      dni,
-      email,
-      telefono,
-      sexo,
-      conocimiento,
-      password,
-      confirmPassword,
-      aceptarTerminos,
-    } = this.usuario;
-    const todosCampos = // .trim() es para asegurarse de que no queden cadenas vacías 
-                        //como válidas
-      nombre.trim() !== '' &&
-      apellidos.trim() !== '' &&
-      dni.trim() !== '' &&
-      email.trim() !== '' &&
-      telefono.trim() !== '' &&
-      sexo.trim() !== '' &&
-      conocimiento.trim() !== '' &&
-      password.trim() !== '' &&
-      confirmPassword.trim() !== '' &&
-      aceptarTerminos;
-    const passwordsCorrects = password === confirmPassword;
-    return todosCampos && passwordsCorrects;
   }
 }
