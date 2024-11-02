@@ -1,0 +1,27 @@
+.bg-red {
+    background-color: #cf2424;
+}
+
+.rounded-card {
+    border-radius: 1rem;
+}
+
+.rounded-image {
+    border-radius: 1rem 0 0 1rem;
+    margin: auto;
+}
+
+.input-fun {
+    border: 2px solid #393f81;
+    border-radius: 0.5rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-fun:focus {
+    border-color: #393f81;
+    box-shadow: 0 0 0.5rem rgba(57, 63, 129, 0.5);
+}
+
+.text-primary {
+    color: #393f81 !important;
+}
