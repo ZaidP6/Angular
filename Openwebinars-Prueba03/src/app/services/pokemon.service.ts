@@ -15,6 +15,12 @@ export class PokemonService{
 
 
   getListaPokemon():Observable<PokemonListResponse>{
-    return this.http.get<PokemonListResponse>(this.apiUrl);
+    return this.http.get<PokemonListResponse>(`${this.apiUrl}?limit = 180`);
   }
+
+  getIdPokemon(url:string){
+    const parts = url.split('/');
+    return parts[parts.length - 2]; 
+  }
+
 }
