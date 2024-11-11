@@ -1,0 +1,14 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 15px;
+    padding: auto;
+    width: 100%;
+}
+.navbar-collapse{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 20px;
+}
