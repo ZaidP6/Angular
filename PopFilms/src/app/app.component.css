@@ -1,0 +1,32 @@
+/* Global Styles */
+.container {
+  display: flex;
+}
+main {
+  flex: 1;
+  padding: 20px;
+}
+.header, .footer {
+  background-color: #009688;
+  color: white;
+  padding: 15px;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #F0F0F0;
+}
+
+.featured-movie {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #CDEB8B;
+  margin-bottom: 20px;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}

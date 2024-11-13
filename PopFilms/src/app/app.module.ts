@@ -5,21 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { FormsModule } from '@angular/forms';
-import { MaterialModule } from './modules/material/material.module';
-import { PopWebDesignedComponent } from './components/pop-web-designed/pop-web-designed.component';
+import { PopWebDesigned2Component } from './components/pop-web-designed2/pop-web-designed2.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { MovieGridComponent } from './components/movie-grid/movie-grid.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PopWebDesigned2Component,
+    HeaderComponent,
+    SidebarComponent,
+    MovieListComponent,
+    MovieGridComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    MaterialModule,
-    FormsModule,
-    PopWebDesignedComponent
   ],
   providers: [
     provideClientHydration(),
