@@ -1,35 +1,55 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { MovieListComponent } from './components/movies/movie-list/movie-list.component';
+import { MovieDetailComponent } from './components/movies/movie-detail/movie-detail.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { PopWebDesigned2Component } from './components/pop-web-designed2/pop-web-designed2.component';
-import { HeaderComponent } from './components/header/header.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { MovieListComponent } from './components/movie-list/movie-list.component';
-import { MovieGridComponent } from './components/movie-grid/movie-grid.component';
+import { ListaPersonasComponent } from './components/lista-personas/lista-personas.component';
+import { provideHttpClient } from '@angular/common/http';
+import { DetallePersonaComponent } from './components/detalle-persona/detalle-persona.component';
+import { EdadActorPipe } from './pipes/edad-actor.pipe';
+import { PosterPipe } from './pipes/poster.pipe';
+import { FooterComponent } from './components/shared/footer/footer.component';
+import { MatIcon } from '@angular/material/icon';
+import { DetalleSerieComponent } from './components/detalle-serie/detalle-serie.component';
+import {MatButtonModule} from '@angular/material/button';
+import { ListaSeriesComponent } from './components/lista-series/lista-series.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { FiltroPeliComponent } from './components/filtros/filtro-peli/filtro-peli.component';
+import { FiltroSerieComponent } from './components/filtros/filtro-serie/filtro-serie.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PopWebDesigned2Component,
-    HeaderComponent,
-    SidebarComponent,
     MovieListComponent,
-    MovieGridComponent
+    MovieDetailComponent,
+    ListaPersonasComponent,
+    DetallePersonaComponent,
+    ListaSeriesComponent,
+    DetalleSerieComponent,
+    EdadActorPipe,
+    PosterPipe,
+    FooterComponent,
+    HomeComponent,
+    NavbarComponent,
+    FiltroPeliComponent,
+    FiltroSerieComponent,
+    SearchComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    MatButtonModule,
+    MatIcon
   ],
-  providers: [
-    provideClientHydration(),
-    provideAnimationsAsync()
-  ],
-  bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  providers: [provideHttpClient(), provideAnimationsAsync()],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
