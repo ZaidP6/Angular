@@ -12,6 +12,7 @@
 + ### [Pipes](https://github.com/ZaidP6/Angular/tree/main/Pipes)
 + ### [Pokemon-Pipes](https://github.com/ZaidP6/Angular/tree/main/Pokemon-Pipes)
 + ### [Housing-App](https://github.com/ZaidP6/Angular/tree/main/housing-app)
++ ### [Pokemon-Pipes](https://github.com/ZaidP6/Angular/tree/main/Pokemon-Pipes)
 
 ## Ejercicios entregados
 + ### [Card-coche](https://github.com/ZaidP6/Angular/tree/main/Card-Coche)
@@ -24,10 +25,13 @@
 + ### [FormularioV2](https://github.com/ZaidP6/Angular/tree/main/FormularioV2)
 + ### [LogIn-App](https://github.com/ZaidP6/Angular/tree/main/LogIn-App)
 + ### [Pokemon-Battle](https://github.com/ZaidP6/Angular/tree/main/Pokemon-Battle)
++ ### [Angular-Pokedex](https://github.com/ZaidP6/Angular/tree/main/Angular-Pokedex)
++ ### [Pop-Films](https://github.com/ZaidP6/Angular/tree/main/PopFilms)
 + 
 
 ## Ejercicios Openwebinar
 + ### [Openwebinar-Prueba02](https://github.com/ZaidP6/Angular/tree/main/Openwebinar-Prueba02)
++ ### [Openwebinars-Prueba03](https://github.com/ZaidP6/Angular/tree/main/Openwebinars-Prueba03)
 
 ## Mis creaciones
 + ### [Openwebinar-Prueba01 (Prueba Trivial Marvel)](https://github.com/ZaidP6/Angular/tree/main/Openwebinar-Prueba01)
